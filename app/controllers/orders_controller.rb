@@ -12,15 +12,12 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
 
-    respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        redirect_to '/', notice: 'Merci, la commande est prise en compte !'
       else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
+
   end
 
   # DELETE /orders/1
