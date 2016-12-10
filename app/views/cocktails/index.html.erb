@@ -5,7 +5,7 @@
 
     <% @cocktails.each do |cocktail| %>
 
-          <img src="<%= cocktail.picture %>" alt="<%= cocktail.name %>" /><br />
+          <img src="/assets/<%= cocktail.picture %>" alt="<%= cocktail.name %>" /><br />
           <div class="cocktail_name"><%= cocktail.name %></div><br />
           <div class="cocktail_description"><%= cocktail.description %></div><br />
           <%= render 'orders/form', order: @order, cocktail_id: cocktail.id %>
