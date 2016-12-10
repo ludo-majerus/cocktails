@@ -3,20 +3,25 @@ class ApplicationController < ActionController::Base
   before_filter :check_name
 
   def check_name
-  	if session[:requester].nil? or session[:requester].empty?
-  		if params["requester"].nil? or params[:requester].empty?
-  			redirect_to '/login.html'
-  		else
-  			p params["requester"]
-  			session[:requester] = params["requester"]
-  			redirect_to '/'
-  		end
+    if not params["reboot"].nil?
+      session.clear
+      redirect_to '/login.html'
     else
-      if session[:requester] == 'Govic'
-        @is_root = true
+    	if session[:requester].nil? or session[:requester].empty?
+    		if params["requester"].nil? or params[:requester].empty?
+    			redirect_to '/login.html'
+    		else
+    			p params["requester"]
+    			session[:requester] = params["requester"]
+    			redirect_to '/'
+    		end
       else
-        @is_root = false
-      end
-  	end
+        if session[:requester] == 'Govic'
+          @is_root = true
+        else
+          @is_root = false
+        end
+    	end
+    end
   end
 end
