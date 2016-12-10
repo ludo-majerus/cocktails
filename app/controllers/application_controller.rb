@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :check_name
 
   def check_name
-  	if session[:requester].nil?
-  		if params["requester"].nil?
+  	if session[:requester].nil? or session[:requester].empty?
+  		if params["requester"].nil? or params[:requester].empty?
   			redirect_to '/login.html'
   		else
   			p params["requester"]

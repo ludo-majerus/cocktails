@@ -1,5 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cocktails</title>
+    <style>
+    body {
+    background-image: url("/assets/bg.jpg");
+    background-repeat: repeat-x;
+    font-family: 'Permanent Marker', cursive;
+    color: #FFF;
+    font-size: 2em;
+}
+
+
+html {
+    height: 100%;
+    background: #ddd url("/assets/bg.jpg") repeat;
+}
+
+body {
+    min-height: 100%;
+    background: transparent url("/assets/bg.jpg") center top no-repeat;
+}
+
+.login {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+
+.login input[type="text"]{
+	height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.login input[type="submit"]{
+	height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+</style>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js'></script>
+  </head>
+
+  <body>
+<div class="login">
 <form action="/">
-	Nom: <input type="text" id="requester" name="requester" />
+	C'est quoi, ton nom ? <br />
+	 <input type="text" id="requester" name="requester" />
 	<br />
-	<input type="submit" />
+	<input type="submit" value="Allez, on y va, j'ai soif !" />
 </form>
+</div>
+<script type='text/javascript'>     
+        $(document).ready(function(){
+            $('.collectonme').hide();
+            //Start the snow default options you can also make it snow in certain elements, etc.
+            $(document).snowfall();
+            var $testContainer = $('.test-container'),
+                testContainerIsSnowing = true;
+            $testContainer.snowfall();
+            $testContainer.click(function(e){
+                testContainerIsSnowing = !testContainerIsSnowing;
+                if(!testContainerIsSnowing){
+                    $testContainer.snowfall('clear');
+                }else{
+                    $testContainer.snowfall();
+                }
+            });
+            $("#clear").click(function(){
+                $(document).snowfall('clear'); // How you clear
+            });
+            
+            $("#round").click(function(){
+                document.body.className  = "darkBg";
+                $('.collectonme').hide();
+                $(document).snowfall('clear');
+                $(document).snowfall({round : true, minSize: 5, maxSize:8}); // add rounded
+            });
+            
+            $("#shadows").click(function(){
+                document.body.className  = "lightBg";
+                $('.collectonme').hide();
+                $(document).snowfall('clear');
+                $(document).snowfall({shadow : true, flakeCount:200}); // add shadows
+            });
+            $("#roundshadows").click(function(){
+                document.body.className  = "lightBg";
+                $('.collectonme').hide();
+                $(document).snowfall('clear');
+                $(document).snowfall({shadow : true, round : true,  minSize: 5, maxSize:8}); // add shadows
+            });
+            
+            $("#collection").click(function(){
+                $(document).snowfall('clear');
+                document.body.className  = "darkBg";
+                $('.collectonme').show();
+                $(document).snowfall({collection : '.collectonme', flakeCount : 250});
+            });
+            
+            $("#imgbut").click(function(){
+                $('.collectonme').hide();
+                $(document).snowfall('clear');
+                document.body.className  = "darkBg";
+                $(document).snowfall({image :"images/flake.png", minSize: 10, maxSize:32});
+            });
+            $("#deviceorientation").click(function(){
+                $(document).snowfall('clear');
+                $('.collectonme').hide();
+                document.body.className  = "darkBg";
+                $(document).snowfall({deviceorientation : true, round : true, minSize: 5, maxSize:8});
+            });
+        });
+     </script>
+
+  </body>
+</html>
+
