@@ -46,3 +46,7 @@ h1 {
     color: lightcoral;
     padding-bottom: 20px;
 }
+
+.edit_cocktail input, .edit_cocktail textarea, .new_cocktail input, .new_cocktail textarea {
+    color: black;
+}

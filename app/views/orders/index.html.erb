@@ -3,11 +3,10 @@
 <h1>La file d'attente !</h1>
 
 <% @orders.each do |order| %>
-  <%= order.requester %> a commandé un <%= order.cocktail.name %> il y a <%= time_ago_in_words(order.created_at) %>. 
+	<% if order.done == 1 %><s><% end %>
+  <%= order.requester %> a commandé un <%= order.cocktail.name %> il y a <%= time_ago_in_words(order.created_at) %>. <% if order.done == 1 %></s><% end %>
   <% if @is_root %>
-    <%= link_to 'Show', order %>
-    <%= link_to 'Edit', edit_order_path(order) %>
-    <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Fait !', '/orders?done=' + order.id.to_s %>
   <% end %>
   <hr />
 <% end %>

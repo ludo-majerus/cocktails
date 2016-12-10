@@ -1,14 +1,16 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
-  # GET /orders
-  # GET /orders.json
   def index
+    if not params['done'].nil?
+      p 'Order done !'
+      o = Order.find(params['done'])
+      o.done = 1
+      o.save
+    end
     @orders = Order.order(created_at: :desc)
   end
 
-  # POST /orders
-  # POST /orders.json
   def create
     @order = Order.new(order_params)
 
