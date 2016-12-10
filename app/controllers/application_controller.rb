@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
   			session[:requester] = params["requester"]
   			redirect_to '/'
   		end
+    else
+      if session[:requester] == 'Govic'
+        @is_root = true
+      else
+        @is_root = false
+      end
   	end
   end
 end

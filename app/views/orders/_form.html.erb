@@ -1,5 +1,5 @@
 <%= form_for(order) do |f| %>
     <%= f.hidden_field :requester, :value => 'toto' %>
     <%= f.hidden_field :cocktail_id, :value => cocktail_id %>
-    <%= f.submit %>
+    <%= f.submit 'J\'en veux un', :class => 'btn btn-primary' %>
 <% end %>

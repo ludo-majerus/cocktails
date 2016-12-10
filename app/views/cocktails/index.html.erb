@@ -1,34 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cocktails</h1>
+<h1>Un 'ti cocktail ?</h1>
+<br /><br />
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Picture</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= cocktail.description %></td>
-        <td><%= cocktail.picture %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-        <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
+
+          <img src="<%= cocktail.picture %>" alt="<%= cocktail.name %>" /><br />
+          <div class="cocktail_name"><%= cocktail.name %></div><br />
+          <div class="cocktail_description"><%= cocktail.description %></div><br />
           <%= render 'orders/form', order: @order, cocktail_id: cocktail.id %>
-        </td>
-      </tr>
+
+        <hr />
+
+      <% if @is_root %>
+        <%= link_to 'Show', cocktail %>
+        <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
+        <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Cocktail', new_cocktail_path %>
+<!--<%= link_to 'New Cocktail', new_cocktail_path %>-->

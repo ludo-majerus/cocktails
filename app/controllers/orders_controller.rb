@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.order(created_at: :desc)
   end
 
   # POST /orders
@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
       if @order.save
-        redirect_to '/', notice: 'Merci, la commande est prise en compte !'
+        flash[:success] = "Merci, la commande est prise en compte ! <br /><a href='/orders'>Voir l'attente</a>"
+        redirect_to '/'
       else
         render :new 
       end
