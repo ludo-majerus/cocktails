@@ -70,6 +70,6 @@ class CocktailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :description, :picture)
+      params.require(:cocktail).permit(:name, :description, :picture, :issmoothie)
     end
 end
