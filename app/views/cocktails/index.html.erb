@@ -2,7 +2,7 @@
 
 <h1>Un 'ti cocktail ?</h1>
 <br /><br />
-
+<div class="text-center">
     <% @cocktails.each do |cocktail| %>
 
           <img src="/assets/<%= cocktail.picture %>" alt="<%= cocktail.name %>" /><br />
@@ -19,6 +19,7 @@
         <hr />
 
     <% end %>
+</div>
 <% if @is_root %>
 <%= link_to 'New Cocktail', new_cocktail_path %>
 <% end %>
