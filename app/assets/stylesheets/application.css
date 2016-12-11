@@ -14,9 +14,6 @@
  *= require_self
  */
 
-body {
-    background: transparent url("/assets/bg.jpg") center top no-repeat;
-}
 
 .cocktail_name {
 	color: cadetblue;
