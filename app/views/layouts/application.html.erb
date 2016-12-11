@@ -7,22 +7,25 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
   </head>
 
   <body>
     <%= render '/partials/header' %>
     <div class="container">
         <div class="row">
-          	Bonjour <%= session[:requester] %>,
-            <br />
-            <% flash.each do |key, value| %>
-              <br /> <br />
-              <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
-            <% end %>
+            <div class="col-sm-12">
+              	Bonjour <%= session[:requester] %>,
+                <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
+                <% end %>
+            </div>
         </div>
     </div>
 
     <div class="container"><%= yield %></div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   </body>
 </html>
