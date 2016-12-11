@@ -20,7 +20,7 @@
 
 
     <div class="col-sm-12 col-md-6">
-      <img src="/assets/<%= cocktail.picture %>" alt="<%= cocktail.name %>" />
+      <!--<img src="/assets/<%= cocktail.picture %>" alt="<%= cocktail.name %>" />-->
       <div class="cocktail_name"><h2><%= cocktail.name %></h2></div>
       <div class="cocktail_description"><h4><%= cocktail.description %></h4></div>
       <%= render 'orders/form', order: @order, cocktail_id: cocktail.id %>
