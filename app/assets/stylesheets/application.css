@@ -36,7 +36,8 @@ h2 {
 body { 
     padding-top: 65px; 
     background-color: #222 !important;
-    color: #9d9d9d !important;
+    /*color: #9d9d9d !important;*/
+    color: #FFF !important;
     font-family: 'Permanent Marker', cursive !important;
 }
 
