@@ -16,21 +16,18 @@
 
 
 .cocktail_name {
-	color: cadetblue;
 	padding-top: 15px;
 
 }
 .cocktail_description {
-	color: #FFF;
 }
 
 h1 {
-    color: lightcoral;
 }
 
 .edit_cocktail input, .edit_cocktail textarea, .new_cocktail input, .new_cocktail textarea {
-    color: black;
 }
+
 body { 
     padding-top: 65px; 
 }
