@@ -13,21 +13,8 @@
  *= require_tree .
  *= require_self
  */
-body {
-    background-image: url("/assets/bg.jpg");
-    background-repeat: repeat-x;
-    font-family: 'Permanent Marker', cursive;
-    color: #FFF;
-}
-
-
-html {
-    height: 100%;
-    background: #ddd url("/assets/bg.jpg") repeat;
-}
 
 body {
-    min-height: 100%;
     background: transparent url("/assets/bg.jpg") center top no-repeat;
 }
 
