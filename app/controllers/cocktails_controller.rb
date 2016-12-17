@@ -5,9 +5,13 @@ class CocktailsController < ApplicationController
   # GET /cocktails.json
   def index
     @cocktails = Cocktail.where("cocktailtype = 'cocktail'")
+    p 'Cocktails : ' + @cocktails.count.to_s
     @virgins = Cocktail.where("cocktailtype = 'virgin'")
+    p 'Virgins : ' + @virgins.count.to_s
     @smoothies = Cocktail.where("cocktailtype = 'smoothie'")
+    p 'Smoothies : ' + @smoothies.count.to_s
     @others = Cocktail.where("cocktailtype not in ('smoothie', 'virgin', 'cocktail')")
+    p 'Others : ' + @others.count.to_s
     @order = Order.new
   end
 
