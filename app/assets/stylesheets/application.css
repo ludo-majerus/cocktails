@@ -66,11 +66,7 @@ input, textarea, input, textarea {
 }
 
 .navbar-inverse {
-    background: url(/assets/bg.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    background: url(/assets/bg.jpg);
 }
 
 .navbar-inverse .navbar-brand {
