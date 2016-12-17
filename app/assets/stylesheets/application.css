@@ -15,7 +15,8 @@
  */
 
 .alert-success {
-    color: #619a4c !important;
+    color: #d6e9c6 !important;
+    background-color: transparent !important;
     border-color: #d6e9c6 !important;
 }
 
