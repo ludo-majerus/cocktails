@@ -1,5 +1,5 @@
-<%= form_for(order) do |f| %>
+<%= form_for(order, :html => {:class => 'text-center'}) do |f| %>
     <%= f.hidden_field :requester, :value => session[:requester] %>
     <%= f.hidden_field :cocktail_id, :value => cocktail_id %>
-    <%= f.submit 'J\'en veux un', :class => 'btn btn-primary' %>
+    <%= f.submit 'J\'en veux un', :class => 'btn btn-primary oneplease center-block"' %>
 <% end %>

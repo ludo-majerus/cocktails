@@ -13,21 +13,21 @@
 </div>
 
 <% if @cocktails.count > 0 %>
-  <h2> Nos cocktails</h2>
+  <h2 class="text-center"> Nos cocktails</h2>
   <%= render 'liste', liste: @cocktails %>
 <% end %>
 <% if @smoothies.count > 0 %>
-  <h2> Nos smoothies</h2>
+  <h2 class="text-center"> Nos smoothies</h2>
   <%= render 'liste', liste: @smoothies %>
 <% end %>
 <% if @virgins.count > 0 %>
-  <h2> Nos "sans alcool"</h2>
+  <h2 class="text-center"> Nos "sans alcool"</h2>
   <%= render 'liste', liste: @virgins %>
 <% end %>
 
 <% if @is_root %>
   <% if @others.count > 0 %>
-    <h2> Autres</h2>
+    <h2 class="text-center"> Autres</h2>
     <%= render 'liste', liste: @others %>
   <% end %>
 <% end %>
