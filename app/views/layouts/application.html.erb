@@ -16,17 +16,6 @@
 
     <%= render '/partials/header' %>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                Bonjour <%= session[:requester] %>,
-                <% flash.each do |key, value| %>
-                  <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
-                <% end %>
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid"><%= yield %></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
