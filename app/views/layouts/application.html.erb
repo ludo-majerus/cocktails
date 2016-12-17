@@ -16,6 +16,13 @@
 
     <%= render '/partials/header' %>
 
+    <% flash.each do |key, value| %>
+        <br /> <br />
+        <div class="container-fluid">
+            <div class="alert alert-<%= key %>"><%= value.html_safe %></div>
+        </div>
+    <% end %>
+
     <div class="container-fluid"><%= yield %></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
