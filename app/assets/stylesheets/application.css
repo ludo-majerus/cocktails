@@ -14,7 +14,10 @@
  *= require_self
  */
 
-
+.alert-success {
+    color: #619a4c !important;
+    border-color: #d6e9c6 !important;
+}
 
 .cocktail_name {
 	padding-top: 15px;
@@ -68,7 +71,7 @@ input, textarea, input, textarea {
 }
 
 .navbar-inverse {
-    background: url(/assets/bg.jpg);
+    background: transparent !important;
 }
 
 .navbar-inverse .navbar-brand {
