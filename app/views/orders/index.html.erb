@@ -4,13 +4,13 @@
 
 <% @orders.each do |order| %>
 	<div class="attente <% if order.done == 1 %>text-right<% end %>">
-	<% if order.done == 1 %><s><% end %>
-		<%= order.requester %> a commandé un <%= order.cocktail.name %> il y a <%= time_ago_in_words(order.created_at) %>. 
-	<% if order.done == 1 %></s><% end %>
+		<% if order.done == 1 %><s><% end %>
+			<%= order.requester %> a commandé un <%= order.cocktail.name %> il y a <%= time_ago_in_words(order.created_at) %>. 
+		<% if order.done == 1 %></s><% end %>
+		<% if @is_root %>
+			<%= link_to 'Fait !', '/orders?done=' + order.id.to_s %>
+		<% end %>
 	</div>
-  <% if @is_root %>
-    <%= link_to 'Fait !', '/orders?done=' + order.id.to_s %>
-  <% end %>
 <% end %>
 
 <br>
