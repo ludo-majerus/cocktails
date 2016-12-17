@@ -41,3 +41,6 @@ body {
     font-family: 'Permanent Marker', cursive !important;
 }
 
+input, textarea, input, textarea {
+    color: black !important;
+}

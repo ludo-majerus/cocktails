@@ -12,31 +12,27 @@
   </div>
 </div>
 
-<% @cocktails.each_slice(2) do |cocktails_row| %>
-
-  <div class="row">
-  
-  <% cocktails_row.each do |cocktail| %>
-
-
-    <div class="col-sm-12 col-md-6">
-      <img src="/assets/<%= cocktail.picture %>" alt="<%= cocktail.name %>" />
-      <div class="cocktail_name"><h2><%= cocktail.name %></h2></div>
-      <div class="cocktail_description"><h4><%= cocktail.description %></h4></div>
-      <%= render 'orders/form', order: @order, cocktail_id: cocktail.id %>
-      <% if @is_root %>
-        <br /><br />
-        <%= link_to 'Show', cocktail %>
-        <%= link_to 'Edit', edit_cocktail_path(cocktail) %>
-        <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
-  <% end %>
-  </div>
+<% if @cocktails.count > 0 %>
+  <h2> Nos cocktails</h2>
+  <%= render 'liste', liste: @cocktails %>
 <% end %>
-</div>
+<% if @smoothies.count > 0 %>
+  <h2> Nos smoothies</h2>
+  <%= render 'liste', liste: @smoothies %>
+<% end %>
+<% if @virgins.count > 0 %>
+  <h2> Nos "sans alcool"</h2>
+  <%= render 'liste', liste: @virgins %>
+<% end %>
 
+<% if @is_root %>
+  <% if @others.count > 0 %>
+    <h2> Autres</h2>
+    <%= render 'liste', liste: @others %>
+  <% end %>
+<% end %>
 
+<br /><br />
 <div class="row">
   <div class="col-sm-12">
     <% if @is_root %>
@@ -44,3 +40,4 @@
     <% end %>
   </div>
 </div>
+<br /><br />

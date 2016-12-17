@@ -4,7 +4,10 @@ class CocktailsController < ApplicationController
   # GET /cocktails
   # GET /cocktails.json
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.where("cocktailtype = 'cocktail'")
+    @virgins = Cocktail.where("cocktailtype = 'virgin'")
+    @smoothies = Cocktail.where("cocktailtype = 'smoothie'")
+    @others = Cocktail.where("cocktailtype not in ('smoothie', 'virgin', 'cocktail')")
     @order = Order.new
   end
 
@@ -70,6 +73,6 @@ class CocktailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name, :description, :picture, :issmoothie)
+      params.require(:cocktail).permit(:name, :description, :picture, :issmoothie, :cocktailtype)
     end
 end
