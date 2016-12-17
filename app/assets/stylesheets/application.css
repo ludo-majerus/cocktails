@@ -15,6 +15,7 @@
  */
 
 
+
 .cocktail_name {
 	padding-top: 15px;
 
@@ -55,6 +56,7 @@ input, textarea, input, textarea {
 
 .oneplease {
 	width: 70%;
+	color: white !important;
 }
 
 .attente {
