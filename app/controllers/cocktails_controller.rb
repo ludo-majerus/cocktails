@@ -15,6 +15,15 @@ class CocktailsController < ApplicationController
     @order = Order.new
   end
 
+  # GET /cocktails
+  # GET /cocktails.json
+  def category
+    @category = params[:category]
+    @liste = Cocktail.where("cocktailtype = '%s'", @category)
+    p 'Cocktail from category ' + @category + ' : ' + @liste.count.to_s
+    @order = Order.new
+  end
+
   # GET /cocktails/1
   # GET /cocktails/1.json
   def show

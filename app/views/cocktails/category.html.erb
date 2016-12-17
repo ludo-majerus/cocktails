@@ -1,0 +1,27 @@
+<% if not notice.nil? %>
+<div class="row">
+  <div class="col-sm-12">
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Un 'ti "<%= @category %>" ?</h1>
+  </div>
+</div>
+
+<% if @liste.count > 0 %>
+  <%= render 'liste', liste: @liste %>
+<% end %>
+
+<br /><br />
+<div class="row">
+  <div class="col-sm-12">
+    <% if @is_root %>
+    <%= link_to 'New Cocktail', new_cocktail_path %>
+    <% end %>
+  </div>
+</div>
+<br /><br />
