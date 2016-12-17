@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :check_name
+  before_filter :check_name, :except => [:login]
 
   def check_name
     if not params["reboot"].nil?
@@ -24,4 +24,9 @@ class ApplicationController < ActionController::Base
     	end
     end
   end
+
+  def login
+    render layout: 'light'
+  end
+
 end
