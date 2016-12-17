@@ -10,7 +10,7 @@ class CocktailsController < ApplicationController
     p 'Virgins : ' + @virgins.count.to_s
     @smoothies = Cocktail.where("cocktailtype = 'smoothie'")
     p 'Smoothies : ' + @smoothies.count.to_s
-    @others = Cocktail.where("cocktailtype not in ('smoothie', 'virgin', 'cocktail')")
+    @others = Cocktail.where("cocktailtype not in ('smoothie', 'virgin', 'cocktail') or cocktailtype IS NULL")
     p 'Others : ' + @others.count.to_s
     @order = Order.new
   end
