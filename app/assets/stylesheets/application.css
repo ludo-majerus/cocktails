@@ -54,3 +54,11 @@ input, textarea, input, textarea {
 .oneplease {
 	width: 70%;
 }
+
+.attente {
+    padding-bottom: 10px;
+}
+
+.attente s {
+	color: dimgray;
+}
