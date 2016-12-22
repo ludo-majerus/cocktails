@@ -11,6 +11,9 @@
   <h2 class="text-center"> Nos cocktails</h2>
   <%= render 'liste', liste: @cocktails %>
 <% end %>
+
+<input type="text" placeholder="code ?" />
+
 <% if @smoothies.count > 0 %>
   <h2 class="text-center"> Nos smoothies</h2>
   <%= render 'liste', liste: @smoothies %>
